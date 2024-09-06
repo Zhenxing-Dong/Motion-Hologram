@@ -8,7 +8,7 @@
 
 ## Simulation results
 
-<div align=center><img width="90%" src="./related/simulated.png"/></div>
+<div align=center><img width="90%" src="./related/simulation.png"/></div>
 
 ## Model analysis
 
