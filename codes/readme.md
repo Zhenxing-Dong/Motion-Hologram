@@ -1,2 +1,2 @@
 # News
-We will update the whole codes in this file. 
+We will update all codes in this file. 
