@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="EVCap: Retrieval-Augmented Image Captioning with External Visual-Name Memory for Open-World Comprehension.">
-  <meta name="keywords" content="Retrieval-Augmented, Caption, Open-World Comprehension">
+        content="Motion Hologram: Jointly optimized hologram generation and motion planning for photorealistic 3D displays via reinforcement learning.">
+  <meta name="keywords" content="Holographic Displays">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EVCap: Retrieval-Augmented Image Captioning with External Visual-Name Memory for Open-World Comprehension</title>
+  <title>Motion Hologram: Jointly optimized hologram generation and motion planning for photorealistic 3D displays via reinforcement learning</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -48,35 +48,29 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title" style="font-size: 32px; line-height: 42px;">
-              <span style="font-size: 38px; display: block; margin-bottom: 8px;"><b>EVCap</b>:</span>
-              Retrieval-Augmented Image Captioning with External Visual-Name Memory for Open-World Comprehension
+              <span style="font-size: 38px; display: block; margin-bottom: 8px;"><b>Motion Hologram</b>:</span>
+              Jointly optimized hologram generation and motion planning for photorealistic 3D displays via reinforcement learning
           </h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://jiaxuan-li.github.io/">Jiaxuan Li</a><sup>*1</sup>,</span>
+              <a href="https://jiaxuan-li.github.io/">Zhenxing Dong</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://vmdlab.github.io/">MinhDuc Vo</a><sup>*1</sup>,</span>
+              <a href="https://vmdlab.github.io/">Yuye Ling</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="http://research.nii.ac.jp/~sugimoto/index.html">Akihiro Sugimoto</a><sup>2</sup>,
+              <a href="http://research.nii.ac.jp/~sugimoto/index.html">Yan Li</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="http://www.nlab.ci.i.u-tokyo.ac.jp/index-e.html">Hideki Nakayama</a><sup>1</sup>,
+              <a href="http://www.nlab.ci.i.u-tokyo.ac.jp/index-e.html">Yikai Su</a><sup>1</sup>,
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>The University of Tokyo,</span>
-            <span class="author-block"><sup>2</sup>National Institute of Informatics</span>
+            <span class="author-block"><sup>1</sup>Shanghai Jiao Tong University</span>
           </div>
   
-
-          <div class="is-size-8 publication-authors">
-            <span >*equal contribution</span>
-          </div>
-          
-          
+                  
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><strong>CVPR 2024</strong></span>
+            <span class="author-block"><strong>Under review</strong></span>
           </div>
 
           <br>
@@ -85,7 +79,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2311.15879.pdf"
+                <a href="https://arxiv.org/pdf/2401.12537v2"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -94,7 +88,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2311.15879"
+                <a href="https://arxiv.org/abs/2401.12537v2"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -104,7 +98,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/Jiaxuan-Li/EVCap"
+                <a href="https://github.com/Zhenxing-Dong/Motion-Hologram"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -139,24 +133,16 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Large language models (LLMs)-based image captioning has the capability of describing objects 
-            not explicitly observed in training data; yet novel objects occur frequently, necessitating 
-            the requirement of sustaining up-to-date object knowledge for open-world comprehension. 
-          </p>
-          <p>
-            Instead of relying on large amounts of data and scaling up network parameters, 
-            we introduce a highly effective retrieval-augmented image captioning method that prompts LLMs 
-            with object names retrieved from External Visual--name memory (EVCap).
-            We build ever-changing object knowledge memory using objects' visuals and names, enabling us to
-            (i) update the memory at a minimal cost and 
-            (ii) effortlessly augment LLMs with retrieved object names by utilizing a lightweight and fast-to-train model. 
-            Our model, which was trained only on the COCO dataset, 
-            can adapt to out-of-domain without requiring additional fine-tuning or re-training. 
-          </p>
-          <p>
-            Our comprehensive experiments conducted on various benchmarks and synthetic commonsense-violating data demonstrate that EVCap, 
-            comprising solely 3.97M trainable parameters, exhibits superior performance compared to other methods of equivalent model size scale. 
-            Notably, it achieves competitive performance against specialist SOTAs with an enormous number of parameters.
+            Holography is capable of rendering three-dimensional scenes with full-depth control, and 
+            delivering transformative experiences across numerous domains, including virtual and augmented reality, 
+            education, and communication. However, traditional holography presents 3D scenes with unnatural defocus and severe speckles 
+            due to the limited space bandwidth product of the spatial light modulator (SLM). Here, we introduce Motion Hologram, 
+            a novel holographic technique to accurately portray photorealistic and speckle-free 3D scenes, by leveraging a single 
+            hologram and learnable motion trajectory, which are jointly optimized within the deep reinforcement learning framework. 
+            Specifically, we experimentally demonstrated the proposed technique could achieve a 4~5 dB PSNR improvement of focal stacks in comparison 
+            with traditional holography and could successfully depict speckle-free, high-fidelity, and full-color 3D displays using 
+            only a commercial SLM for the first time. We believe the proposed method promises a new form of holographic displays 
+            that will offer immersive viewing experiences for audiences.
           </p>
         </div>
       </div>
@@ -173,11 +159,11 @@
           <h2 class="title is-3">Model</h2>
           <div class="content has-text-justified">
             <p>
-            EVCap consists of an external visual-name memory with image embeddings and object names (upper), a frozen ViT and Q-Former equipped with trainable image query tokens, an attentive fusion module developed by a customized
-            frozen Q-Former and trainable object name query tokens, and a frozen LLM with a trainable linear layer (lower).
+            Here, we proposed a novel CGH technique called Motion Hologram to disrupt the spatial coherence of light source using reinforcement learning, 
+            which can thus render photorealistic and speckle-free 3D scenes by globally designing the holographic system.
             </p>
           </div>
-          <img src="./static/images/model.png"
+          <img src="./static/images/framework.png"
           class="interpolation-image"
           alt="Interpolate start reference image."
           width="75%"/>
@@ -191,12 +177,14 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{li2024evcap,
-  title={EVCap: Retrieval-Augmented Image Captioning with External Visual-Name Memory for Open-World Comprehension}, 
-  author={Jiaxuan Li and Duc Minh Vo and Akihiro Sugimoto and Hideki Nakayama},
-  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  month     = {June},
-  year      = {2024},
+    <pre><code>@misc{dong2024motionhologramjointlyoptimized,
+      title={Motion Hologram: Jointly optimized hologram generation and motion planning for photorealistic and speckle-free 3D displays via reinforcement learning}, 
+      author={Zhenxing Dong and Yuye Ling and Yan Li and Yikai Su},
+      year={2024},
+      eprint={2401.12537},
+      archivePrefix={arXiv},
+      primaryClass={physics.optics},
+      url={https://arxiv.org/abs/2401.12537}, 
 }</code></pre>
   </div>
 </section>
