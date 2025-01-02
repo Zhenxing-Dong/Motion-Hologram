@@ -6,16 +6,6 @@
 <div align=center><img width="90%" src="./related/framework.png"/></div>
 
 
-## Simulation results
+## Train
 
-<div align=center><img width="90%" src="./related/simulation.png"/></div>
 
-## Model analysis
-
-<div align=center><img width="90%" src="./related/model.png"/></div>
-
-## Experimental results
-
-<div align=center><img width="90%" src="./related/experiment.png"/></div>
-
-# Updating ...
