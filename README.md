@@ -20,7 +20,7 @@ python ./codes/test_stage2/main.py --channel=0 --data_dir=./data/example_input -
 ## Jointly optimization
 You can jointly optimize the motion hologram generation (or other environment) and motion planning (or other values) based on your task.
 ```
-python ./codes/train_stage2/train.py --channel=0 --image_dir=./data/focal_stack --depth_dir=./data/depth
+python ./codes/train_stage1/train.py --channel=0 --image_dir=./data/focal_stack --depth_dir=./data/depth
 ```
 ## Camera-in-the-loop
 The origin citl codes can be found in [neural-3d-holography](https://github.com/computational-imaging/neural-3d-holography). Here, we also provide citl codes in our paper to calibrate your holographic system. You should replace the system parameters based on your holographic setup. 
