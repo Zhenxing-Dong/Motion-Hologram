@@ -22,9 +22,21 @@ You can jointly optimize the hologram generation (or other environment) and moti
 ```
 python ./codes/test_stage2/train.py --channel=0 --image_dir=./data/focal_stack --depth_dir=./data/depth
 ```
+## Camera-in-the-loop
+The origin citl codes can be found in [neural-3d-holography](https://github.com/computational-imaging/neural-3d-holography). Here, we also provide citl codes to calibrate your holographic system in our paper.
 
-## Updating...
-
+### Capturing
+```
+python ./codes/citl/system_captured/main.py
+```
+### Calibration
+```
+python ./codes/citl/system_captured/cali.py
+```
+### Training the citl model
+```
+python ./codes/citl/train.py --arch Multi_CNNpropCNN --train_dir ./data/citl/train_data/red --val_dir ./data/citl/val_data/red
+```
 
 ## Acknowledgements
 The codes are built on [neural-3d-holography](https://github.com/computational-imaging/neural-3d-holography) and [PPO-PyTorch](https://github.com/nikhilbarhate99/PPO-PyTorch). We sincerely appreciate the authors for sharing their codes.
