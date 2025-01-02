@@ -49,9 +49,9 @@ if not os.path.exists(args.hologram_dir):
     os.makedirs(args.hologram_dir)
     os.makedirs(args.recon_dir)
 
-for i, images_mask in enumerate(dataloader, 0): 
+for i, images in enumerate(dataloader, 0): 
     print(i)
-    focal_stack = torch.cat(images_mask, dim=0)
+    focal_stack = torch.cat(images, dim=0)
 
     target_amp = focal_stack[:, args.channel, :, :].unsqueeze(1)
 
