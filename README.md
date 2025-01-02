@@ -1,5 +1,7 @@
 # Motion Hologram
-### [Paper](https://dl.acm.org/doi/10.1145/3658168) | [arXiv](https://arxiv.org/abs/2404.11810) | [Project Page](https://www.computationalimaging.org/publications/holographic-parallax/) | [Video](https://youtu.be/p43MSDOEWWw?si=2VC_8LeOhYAUm2Et)
+### [Paper](https://arxiv.org/pdf/2401.12537v2) | [arXiv](https://arxiv.org/abs/2401.12537v2) | [Project Page](https://zhenxing-dong.github.io/Motion-Hologram/)
+
+Source code for the Science Advances paper titled "Motion Hologram: Jointly optimized hologram generation and motion planning for photorealistic 3D displays via reinforcement learning"
 
 [Zhenxing Dong](https://zhenxing-dong.github.io/),
 [Yuye Ling](http://www.yuyeling.com/),
