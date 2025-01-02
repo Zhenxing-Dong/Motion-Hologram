@@ -71,7 +71,7 @@ class Hologram():
         init_phase = (-0.5  + 1.0 * torch.rand(1, 1, 1152, 2048)).cuda()
         circ_filter = optics.np_filter(1, 1, 1152, 2048, 1152//2, 2048//2)
         circ_filter = torch.tensor(circ_filter, dtype=torch.float32).cuda()
-        _, recon_amp = FocalStackShift(init_phase, target_amp, mask, self.model, path, circ_filter, num_iters=300, lr=0.4)
+        _, recon_amp = FocalStackShift(init_phase, target_amp, mask, self.model, path, circ_filter, num_iters=2000, lr=0.05)
         psnr_value = PSNR(recon_amp, target_amp)
         psnr_infocus_value = PSNR(recon_amp*mask, target_amp*mask)
         psnr_all = psnr_value + psnr_infocus_value
