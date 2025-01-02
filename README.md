@@ -13,7 +13,7 @@ We generate the focal stack from RGB using the [DepthAnything](https://github.co
 
 ## Quick testing: CGH optimization
 Replace values in your setup.
-    python main.py --channel=0 --data_dir=./data/example_input --hologram_dir=./hologram
+        python main.py --channel=0 --data_dir=./data/example_input --hologram_dir=./hologram
 
 ## Updating...
 
