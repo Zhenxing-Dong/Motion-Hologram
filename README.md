@@ -12,9 +12,10 @@ and [Yikai Su](https://otip.sjtu.edu.cn/en/member/YikaiSu)
 We generate the focal stack from RGB using the [DepthAnything](https://github.com/DepthAnything/Depth-Anything-V2) and the [DeepFocus](https://github.com/facebookresearch/DeepFocus) in the paper. We currently also find the mathematical model to synthesize the focal stack in the [Holographic Parallax](https://github.com/dongyeon93/holographic-parallax). We sincerely appreciate the authors for sharing their codes.
 
 ## Quick testing: CGH optimization
-Replace values in your setup.
-        python main.py --channel=0 --data_dir=./data/example_input --hologram_dir=./hologram
-
+Replace parameters based on your holographic setup.
+```
+python main.py --channel=0 --data_dir=./data/example_input --hologram_dir=./hologram
+```
 ## Updating...
 
 
