@@ -18,7 +18,7 @@ def FocalStackShift(init_phase, target_amp, sim_prop, filter, num_iters,
     target_amp = target_amp.permute(1, 0, 2, 3)
     # Define shifts for focal stack
     shifts = [
-        (0, 0), (0, -1), (0, -1), (-2, 0), (0, 2), (0, -1), (1, 0), (0, -1), (0, -1)
+        (0, 0), (0, -1), (0, -2), (-2, -2), (-2, 0), (-2, -1), (-1, -1), (-1, -2), (-1, -3)
     ]
 
     best_loss = 1e10
