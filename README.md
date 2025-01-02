@@ -9,7 +9,7 @@ Source codes for the Science Advances paper titled "Motion Hologram: Jointly opt
 and [Yikai Su](https://otip.sjtu.edu.cn/en/member/YikaiSu) 
 
 ## Focal stack generation
-We generate the focal stack from RGB using the [DepthAnything](https://github.com/DepthAnything/Depth-Anything-V2) and the [DeepFocus](https://github.com/facebookresearch/DeepFocus) in the paper. We currently also find the mathematical model to synthesize the focal stack in the [Holographic Parallax](https://github.com/dongyeon93/holographic-parallax). We sincerely appreciate the authors for sharing their codes.
+We generate the focal stack from RGB in the paper using the [DepthAnything](https://github.com/DepthAnything/Depth-Anything-V2) and the [DeepFocus](https://github.com/facebookresearch/DeepFocus). We currently also find the mathematical model to synthesize the focal stack in the [Holographic Parallax](https://github.com/dongyeon93/holographic-parallax). We sincerely appreciate the authors for sharing their codes.
 
 ## CGH optimization
 Replace parameters based on your holographic setup.
