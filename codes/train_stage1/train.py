@@ -189,7 +189,7 @@ def train():
 
     # record best way
     best_reward = 0
-    best_way = []
+    best_path = []
 
     # training loop
     while time_step <= max_training_timesteps:
@@ -259,10 +259,10 @@ def train():
                     best_reward = current_ep_reward
                     model_save_path = "./best_model.pth"
                     with open("best_path.txt","w") as f:
-                        for w in best_way:
+                        for w in best_path:
                             f.write(str(w)+"\n")
                     ppo_agent.save(model_save_path)
-                best_way = []
+                best_path = []
                 break
 
         print_running_reward += current_ep_reward
