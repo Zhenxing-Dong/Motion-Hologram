@@ -49,10 +49,8 @@ def FocalStackShift(init_phase, target_amp, mask, model_citl, path, circ_filter,
                 (recon_amp ** 2).mean() 
 
         lossValue_MSE = loss(s*recon_amp, target_amp)
-        loss_infocus = loss(s*recon_amp*mask, target_amp*mask)
-        lossvalue = lossValue_MSE + loss_infocus
 
-        lossvalue.backward()
+        lossValue_MSE.backward()
         optimizer.step()
 
     return slm_phase, s*recon_amp
