@@ -52,32 +52,6 @@ def resize_keep_aspect(image, target_res, pad=False):
     image = resize(image, target_res, mode='reflect')
     return np.transpose(image, axes=(2, 0, 1))
 
-class FocalstackDataset(Dataset):
-    def __init__(self, root_dir):
-        self.root_dir = root_dir
-        self.folder_names = sorted(os.listdir(root_dir))
-
-    def __len__(self):
-        return len(self.folder_names)
-
-    def __getitem__(self, idx):
-
-        ## load images
-        folder_name = self.folder_names[idx]
-        folder_path = os.path.join(self.root_dir, folder_name)
-        image_names = sorted(os.listdir(folder_path))
-        images = []
-
-        for image_name in image_names:
-            image_path = os.path.join(folder_path, image_name)
-            image = cv2.imread(image_path)
-            image = intoamp(image) 
-            image = resize_keep_aspect(image, (1080, 1920))
-            image = torch.from_numpy(image).float().cuda()
-            images.append(image)
-
-        return images
-
 class FocalstackDDataset(Dataset):
     def __init__(self, root_dir, depth_dir, depth_bins=7):
         self.root_dir = root_dir
@@ -105,6 +79,7 @@ class FocalstackDDataset(Dataset):
         for image_name in image_names:
             image_path = os.path.join(folder_path, image_name)
             image = cv2.imread(image_path)
+            image = intoamp(image) 
             image = resize_keep_aspect(image, (1080, 1920))
             image = torch.from_numpy(image).float().cuda()  # HWC -> CHW
             images.append(image)
