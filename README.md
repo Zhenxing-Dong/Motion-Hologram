@@ -33,7 +33,7 @@ python ./codes/citl/system_captured/main.py
 ```
 python ./codes/citl/system_captured/cali.py
 ```
-### Training the citl model
+### Citl model
 ```
 python ./codes/citl/train.py --arch Multi_CNNpropCNN --train_dir ./data/citl/train_data/red --val_dir ./data/citl/val_data/red
 ```
