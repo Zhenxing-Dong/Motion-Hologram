@@ -1,5 +1,5 @@
 # Motion Hologram
-### [Paper](https://arxiv.org/pdf/2401.12537v2) | [arXiv](https://arxiv.org/abs/2401.12537v2) | [Project Page](https://zhenxing-dong.github.io/Motion-Hologram/)
+### [Paper](https://arxiv.org/pdf/2401.12537v2) | [Project Page](https://zhenxing-dong.github.io/Motion-Hologram/)
 
 Source codes for the Science Advances (Accepted) paper titled "Motion Hologram: Jointly optimized hologram generation and motion planning for photorealistic 3D displays via reinforcement learning"
 
