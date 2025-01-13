@@ -141,8 +141,6 @@ class Multi_CNNpropCNN(nn.Module):
             input_field = self.slm_latent_amp * input_field
  
         field = torch.cat((input_field.real, input_field.imag), dim=1)
-        field = utils.pad_image(field, (576, 1024), pytorch=True, stacked_complex=False, padval=0)
-        
         slm_field = self.slm_cnn(field)
 
         slm_amp, slm_phs = utils.rect_to_polar(slm_field[:, 0, :, : ].unsqueeze(1), slm_field[:, 1, :, : ].unsqueeze(1))
