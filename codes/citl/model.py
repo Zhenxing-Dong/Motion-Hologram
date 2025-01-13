@@ -123,10 +123,14 @@ class Multi_CNNpropCNN(nn.Module):
 
 
         ## Target CNN
-        self.target_cnn = UnetGenerator(input_nc=1, output_nc=1,
+        self.target_cnn = UnetGenerator(input_nc=2, output_nc=2,
                                         num_downs=num_downs_target, nf0=num_feats_target_min,
                                         max_channels=num_feats_target_max, norm_layer=norm, outer_skip=True)
         init_weights(self.target_cnn, init_type='normal')
+
+
+        self.circ_filter = np_circ_filter(1, 1, 576, 1024, 576//2)
+        self.circ_filter = torch.tensor(self.circ_filter, dtype=torch.float32).cuda()
 
     def forward(self, hologram):
 
@@ -141,6 +145,7 @@ class Multi_CNNpropCNN(nn.Module):
             input_field = self.slm_latent_amp * input_field
  
         field = torch.cat((input_field.real, input_field.imag), dim=1)
+        field = utils.pad_image(field, (576, 1024), pytorch=True, stacked_complex=False, padval=0)
         
         slm_field = self.slm_cnn(field)
 
@@ -150,12 +155,21 @@ class Multi_CNNpropCNN(nn.Module):
 
         slm_real, slm_imag = polar_to_rect(slm_field[:, 0, :, : ].unsqueeze(1), slm_field[:, 1, :, : ].unsqueeze(1))
         slm_field = torch.complex(slm_real, slm_imag)
+        
+
+        # slm_field = tfft.fftshift(tfft.fftn(slm_field, dim=(-2, -1), norm='ortho'), (-2, -1))
+        # slm_field = slm_field * self.circ_filter
+        # slm_field = tfft.ifftn(tfft.ifftshift(slm_field, (-2, -1)), dim=(-2, -1), norm='ortho')
 
         target_field = self.prop(slm_field)
 
         target_field =  target_field.permute(1, 0, 2, 3)
 
-        output_field = self.target_cnn(target_field.amp)
+        target_field = torch.cat((target_field.real, target_field.imag), dim=1)
+
+        output_field = self.target_cnn(target_field)
+
+        output_field = torch.complex(output_field[:, 0, :, : ].unsqueeze(1), output_field[:, 1, :, : ].unsqueeze(1))
 
         return output_field
     
