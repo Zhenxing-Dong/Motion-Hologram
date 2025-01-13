@@ -128,10 +128,6 @@ class Multi_CNNpropCNN(nn.Module):
                                         max_channels=num_feats_target_max, norm_layer=norm, outer_skip=True)
         init_weights(self.target_cnn, init_type='normal')
 
-
-        self.circ_filter = np_circ_filter(1, 1, 576, 1024, 576//2)
-        self.circ_filter = torch.tensor(self.circ_filter, dtype=torch.float32).cuda()
-
     def forward(self, hologram):
 
         input_field = torch.exp(1j * hologram)
@@ -156,10 +152,6 @@ class Multi_CNNpropCNN(nn.Module):
         slm_real, slm_imag = polar_to_rect(slm_field[:, 0, :, : ].unsqueeze(1), slm_field[:, 1, :, : ].unsqueeze(1))
         slm_field = torch.complex(slm_real, slm_imag)
         
-
-        # slm_field = tfft.fftshift(tfft.fftn(slm_field, dim=(-2, -1), norm='ortho'), (-2, -1))
-        # slm_field = slm_field * self.circ_filter
-        # slm_field = tfft.ifftn(tfft.ifftshift(slm_field, (-2, -1)), dim=(-2, -1), norm='ortho')
 
         target_field = self.prop(slm_field)
 
