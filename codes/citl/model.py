@@ -142,13 +142,7 @@ class Multi_CNNpropCNN(nn.Module):
  
         field = torch.cat((input_field.real, input_field.imag), dim=1)
         slm_field = self.slm_cnn(field)
-
-        slm_amp, slm_phs = utils.rect_to_polar(slm_field[:, 0, :, : ].unsqueeze(1), slm_field[:, 1, :, : ].unsqueeze(1))
-
-        slm_field = torch.cat((slm_amp, slm_phs), dim=1)
-
-        slm_real, slm_imag = polar_to_rect(slm_field[:, 0, :, : ].unsqueeze(1), slm_field[:, 1, :, : ].unsqueeze(1))
-        slm_field = torch.complex(slm_real, slm_imag)
+        slm_field = torch.complex(slm_field[:, 0, :, : ].unsqueeze(1), slm_field[:, 1, :, : ].unsqueeze(1))
         
 
         target_field = self.prop(slm_field)
