@@ -18,7 +18,7 @@ python ./codes/test_stage2/main.py --channel=0 --data_dir=./data/example_input -
 ```
 
 ## Jointly optimization
-You can jointly optimize the motion hologram generation (or other environment) and motion planning (or other values) based on your task.
+You can jointly optimize the motion hologram generation (or other environment) and motion planning (or other values) based on your task. Replace parameters based on your setup.
 ```
 python ./codes/train_stage1/train.py --channel=0 --image_dir=./data/focal_stack --depth_dir=./data/depth
 ```
